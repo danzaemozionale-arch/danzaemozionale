@@ -28,111 +28,131 @@
     </script>
 
     <style>
-        :root {
-            --bg-light: #f5f1e9;
-            --primary-brown: #a66a4c;
-            --dark-text: #2d2926;
-            --accent-sepia: #704231;
-        }
+    :root {
+        --bg-color: #ffffff;      /* Bianco puro */
+        --text-color: #000000;    /* Nero profondo */
+        --accent-color: #f1f1f1;  /* Grigio chiarissimo per i dettagli */
+    }
 
-        body {
-            margin: 0;
-            font-family: 'Ametheus', serif, system-ui; /* Simile ai font eleganti delle immagini */
-            background-color: var(--bg-light);
-            color: var(--dark-text);
-            line-height: 1.6;
-        }
+    body {
+        margin: 0;
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Font moderno e pulito */
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        line-height: 1.2;
+        -webkit-font-smoothing: antialiased;
+    }
 
-        /* Header */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 5%;
-            background: #fff;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+    /* Header in stile Minimal Gaga */
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 4%;
+        background: #fff;
+        border-bottom: 2px solid #000; /* Linea netta tipica del minimalismo */
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
 
-        .logo { font-size: 1.5rem; font-style: italic; font-weight: 300; }
-        .logo span { color: var(--primary-brown); }
+    .logo { 
+        font-size: 1.8rem; 
+        font-weight: 900; 
+        text-transform: uppercase; 
+        letter-spacing: -1px; 
+    }
 
-        nav a {
-            text-decoration: none;
-            color: var(--dark-text);
-            margin-left: 25px;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-        }
+    nav a {
+        text-decoration: none;
+        color: #000;
+        margin-left: 30px;
+        font-size: 0.9rem;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
 
-        .btn-calendario {
-            border: 1px solid var(--primary-brown);
-            padding: 8px 15px;
-            color: var(--primary-brown);
-        }
+    /* Hero Section: Immagine a tutto schermo e testo gigante */
+    .hero {
+        display: block;
+        position: relative;
+        height: 90vh;
+        background-color: #000;
+    }
 
-        /* Hero Section */
-        .hero {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            min-height: 80vh;
-        }
+    .hero-image {
+        width: 100%;
+        height: 100%;
+        background: url('tua_foto_movimento.jpg') center/cover no-repeat;
+        opacity: 0.8; /* Effetto drammatico */
+    }
 
-        .hero-image {
-            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('percorso_tua_foto_movimento.jpg');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: flex-end;
-            padding: 50px;
-            color: #fff;
-        }
+    .hero-content {
+        position: absolute;
+        bottom: 10%;
+        left: 4%;
+        color: #fff;
+        max-width: 800px;
+    }
 
-        .hero-content {
-            padding: 10% 15%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
+    h1 { 
+        font-size: 8vw; /* Testo enorme che si adatta allo schermo */
+        line-height: 0.9;
+        font-weight: 900;
+        text-transform: uppercase;
+        margin: 0;
+    }
 
-        h1 { font-size: 3.5rem; font-weight: 300; margin-bottom: 1rem; }
-        .serif-italic { font-style: italic; color: var(--primary-brown); }
+    /* Bottoni rettangolari e netti */
+    .btn-action {
+        display: inline-block;
+        margin-top: 20px;
+        background: #000;
+        color: #fff;
+        padding: 15px 40px;
+        text-decoration: none;
+        font-weight: 800;
+        text-transform: uppercase;
+        border: 2px solid #fff;
+        transition: 0.2s;
+    }
 
-        /* Griglia Programmi */
-        .programs {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            background-color: #ede6db;
-        }
+    .btn-action:hover {
+        background: #fff;
+        color: #000;
+    }
 
-        .program-card {
-            padding: 15% 10%;
-            border: 0.5px solid rgba(166, 106, 76, 0.1);
-        }
+    /* Sezioni programmatiche */
+    .programs {
+        padding: 80px 4%;
+    }
 
-        .program-card h2 { font-size: 2.5rem; font-weight: 300; }
+    .program-card {
+        border-top: 1px solid #000;
+        padding: 40px 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
 
-        .btn-action {
-            display: inline-block;
-            margin-top: 30px;
-            background: var(--primary-brown);
-            color: white;
-            padding: 12px 30px;
-            text-decoration: none;
-            transition: 0.3s;
-        }
+    .program-card h2 {
+        font-size: 3rem;
+        text-transform: uppercase;
+        margin: 0;
+    }
 
-        .btn-action:hover { background: var(--accent-sepia); }
+    /* Footer Nero */
+    footer {
+        background: #000;
+        color: #fff;
+        padding: 80px 4%;
+    }
 
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .hero, .programs { grid-template-columns: 1fr; }
-            nav { display: none; } /* Semplificazione per mobile */
-            h1 { font-size: 2.5rem; }
-        }
-    </style>
+    @media (max-width: 768px) {
+        h1 { font-size: 15vw; }
+        .program-card { grid-template-columns: 1fr; }
+    }
+</style>
 </head>
 <body>
 
